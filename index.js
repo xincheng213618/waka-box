@@ -8,6 +8,10 @@ const {
   WAKATIME_API_KEY: wakatimeApiKey
 } = process.env;
 
+console.log(`GIST_ID: ${gistId}`);
+console.log(`GH_TOKEN starts with: ${githubToken ? githubToken.slice(0, 4) + '****' : 'Not Set'}`);
+console.log(`WAKATIME_API_KEY starts with: ${wakatimeApiKey ? wakatimeApiKey.slice(0, 4) + '****' : 'Not Set'}`);
+
 const wakatime = new WakaTimeClient(wakatimeApiKey);
 
 const octokit = new Octokit({ auth: `token ${githubToken}` });
